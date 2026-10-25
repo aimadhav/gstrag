@@ -1,0 +1,33 @@
+[project]
+name = "gst-rag"
+version = "0.1.0"
+description = "Docling ingestion and controlled chunking experiments for GST documents"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "docling>=2,<3", "transformers>=4,<6",
+    "numpy>=1.26,<3", "requests>=2.32,<3", "python-dotenv>=1,<2",
+    "fastapi>=0.115,<1", "uvicorn>=0.30,<1", "PyJWT>=2.10,<3", "pwdlib[argon2]>=0.2,<1",
+    "pypdf>=6,<8",
+]
+
+[dependency-groups]
+dev = ["httpx>=0.27,<1"]
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+gst-rag = "gst_rag.cli:main"
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+torchvision = { index = "pytorch-cpu" }

@@ -1,0 +1,142 @@
+/* Visual refinements only. Authentication and evidence boundaries live in the API. */
+:root {
+  --paper: #fafaf6;
+  --pine: #173f33;
+  --quiet-ink: #66756b;
+}
+
+/* A calmer frame gives the conversation, not the interface, the emphasis. */
+.main-shell { background: var(--paper); }
+.topbar { background: #ffffffdb; }
+.sidebar { background: #f1f3ec; }
+.sidebar .brand { margin-bottom: 36px; }
+.new-question { box-shadow: 0 3px 7px #133e3310; border-radius: 9px; }
+.nav-item { border-radius: 8px; min-height: 44px; }
+.nav-item.active { background: #e0e9dd; color: #244c39; }
+.recent-heading, .nav-label { font-size: 9px; color: #73836d; }
+.recent-item { border-radius: 8px; }
+.recent-item.selected { background: #e8ece2; }
+.topbar-assurance { background: #f0f5ec; padding: 6px 10px; border-radius: 20px; }
+.workspace-main { padding-top: 43px; padding-bottom: 38px; max-width: 940px; }
+.page-heading { margin-bottom: 34px; }
+.page-heading .eyebrow { color: #6c8067; font-size: 9px; letter-spacing: .16em; }
+.page-heading h1 { font-weight: 500; letter-spacing: -.04em; }
+.page-heading > p { color: #74816f; font-size: 18px; line-height: 1.5; }
+.question-bubble { background: #eaf0e6; border-color: #e0e7da; border-radius: 12px 12px 3px 12px; }
+.question-bubble p { line-height: 1.7; color: #344f3f; }
+.question-bubble time { color: #71816a; font-size: 10px; }
+.answer-card { border-color: #dfe5d9; border-radius: 13px; padding: 23px 25px 18px; box-shadow: 0 5px 20px #253d1e04; }
+.answer-top { margin-bottom: 24px; padding-bottom: 17px; border-bottom: 1px solid #edf0e8; flex-wrap: wrap; gap: 12px; }
+.answer-identity { display: flex; align-items: center; gap: 9px; font-size: 11px; font-weight: 650; color: #54704e; }
+.answer-symbol { width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; background: #f0f5e9; border-radius: 8px; color: #628359; }
+.answer-text h3 { font-size: 21px; font-weight: 500; color: #284a36; margin-bottom: 9px; }
+.answer-text section + section { margin-top: 23px; }
+.answer-text p { font-size: 14px; color: #56675a; line-height: 1.85; }
+.answer-bottom { padding-top: 16px; margin-top: 26px; }
+.citation-chip { background: #f8faf4; border-color: #e4eade; border-radius: 6px; }
+.composer { border-color: #c8d6bf; border-radius: 12px; box-shadow: 0 4px 16px #29402105; transition: border-color .18s, box-shadow .18s; }
+.composer:focus-within { border-color: #62957b; box-shadow: 0 0 0 3px #dceadd; }
+.composer > textarea { min-height: 80px; padding: 12px 11px 16px; }
+.send-button { border-radius: 8px; }
+.research-context { background: #fdfefb; padding-top: 45px; }
+.research-context h2 { font-size: 23px; font-weight: 500; }
+.access-card { border-color: #d9e4cf; background: #f0f5e9; border-radius: 10px; padding: 18px 15px; }
+.access-card strong { font-size: 13px; }
+.review-note { border: 0; border-left: 2px solid #cfb277; background: #faf7ee; border-radius: 0 8px 8px 0; padding: 15px 13px; }
+.context-fineprint .eyebrow { font-size: 9px; color: #738469; }
+
+/* A small optional invitation, clearly separate from customer research controls. */
+.recruiter-entry {
+  display: flex; align-items: center; gap: 11px; width: 100%; text-align: left;
+  background: #f8faf5; border: 1px solid #dfe7d8; border-radius: 10px;
+  padding: 13px; color: #395b43; transition: background .18s, border-color .18s;
+}
+.recruiter-entry:hover { background: #eef4e7; border-color: #b7cdae; }
+.recruiter-entry-icon { display: flex; flex-shrink: 0; align-items: center; justify-content: center; width: 31px; height: 33px; color: #577b4e; }
+.recruiter-entry > span:nth-child(2) { min-width: 0; flex: 1; }
+.recruiter-entry strong { display: block; font-size: 12px; font-weight: 650; }
+.recruiter-entry small { display: block; font-size: 10px; font-weight: 400; color: #71836a; margin-top: 3px; line-height: 1.5; }
+.sidebar-links { margin: 0 0 19px; gap: 17px; }
+.sidebar-links .help-button { margin-left: 12px; color: #667b5e; font-size: 12px; }
+.sidebar .recruiter-entry { padding: 10px 7px; gap: 6px; background: #f7f9f2; }
+.sidebar .recruiter-entry small { font-size: 9px; }
+.login-form-wrap > .recruiter-entry { margin-top: 22px; }
+.login-story { background: radial-gradient(ellipse at 12% 90%, #dfe8d6 0, transparent 60%), #f1f4ec; }
+.login-story h1 { font-weight: 500; }
+.login-story-body > p { color: #61755f; }
+.login-form-wrap h2 { font-weight: 500; }
+.login-form-wrap input { border-radius: 9px; background: #fcfdfb; }
+.login-form-wrap .primary { border-radius: 9px; }
+.preview-invite { border-top-color: #dce5d4; }
+
+/* The recruiter view is an outline, not a claim that the walkthrough is finished. */
+.recruiter-modal { width: min(650px, calc(100vw - 32px)); border-radius: 17px; border-color: #d9e1d3; background: #fbfcf8; box-shadow: 0 25px 100px #102e3b38; }
+.recruiter-modal::backdrop { background: #16372880; backdrop-filter: blur(5px); }
+.recruiter-modal .modal-heading { padding: 16px 27px; border-bottom-color: #e4e9df; }
+.recruiter-modal .modal-heading h2 { font-family: inherit; font-size: 11px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; color: #526e4d; }
+.recruiter-modal .icon-button { color: #5e7457; }
+.recruiter-hero { background: var(--pine); padding: 26px 30px 27px; position: relative; overflow: hidden; isolation: isolate; }
+.recruiter-stage { display: inline-flex; align-items: center; gap: 8px; color: #c7d6b8; font-size: 9px; font-weight: 600; letter-spacing: .13em; }
+.recruiter-stage > span { width: 5px; height: 5px; background: #bad394; border-radius: 50%; box-shadow: 0 0 0 4px #bad39414; }
+.recruiter-hero h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 43px; font-weight: 400; letter-spacing: -.04em; line-height: 1.04; color: #f3f5e9; margin: 17px 0 15px; }
+.recruiter-hero p { max-width: 350px; font-size: 12px; line-height: 1.75; color: #c5d1bd; }
+.recruiter-watermark { position: absolute; right: 26px; top: 48px; color: #97b386; opacity: .18; z-index: -1; transform: rotate(-8deg); }
+.recruiter-outline { padding: 20px 30px 17px; }
+.recruiter-outline-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.recruiter-outline-heading .eyebrow { color: #6a7c61; font-size: 9px; }
+.recruiter-outline-heading > span:last-child { color: #7c8c72; font-size: 10px; }
+.recruiter-outline ol { list-style: none; padding: 0; margin: 0; }
+.recruiter-outline li { display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid #e5ebde; }
+.outline-number { font-family: Georgia, serif; color: #9aa98e; font-size: 17px; }
+.recruiter-outline li > div { flex: 1; }
+.recruiter-outline li strong { display: block; font-size: 12px; font-weight: 600; color: #35563d; }
+.recruiter-outline li div > span { display: block; font-size: 11px; color: #6c7e62; margin-top: 3px; }
+.recruiter-outline li > svg { color: #a2b293; }
+.recruiter-footer { display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 17px 30px; border-top: 1px solid #e3e9dc; background: #f1f5eb; }
+.recruiter-footer > span { font-size: 10px; color: #6f8164; line-height: 1.7; }
+.recruiter-footer strong { font-weight: 500; color: #4c6945; }
+.recruiter-footer .button { border-radius: 8px; font-size: 11px; min-height: 39px; }
+
+@media (max-width: 760px) {
+  .workspace-main { padding: 29px 18px 30px; }
+  .page-heading { margin-bottom: 28px; }
+  .page-heading h1 { font-size: 34px; }
+  .page-heading > p { font-size: 16px; }
+  .topbar-assurance { font-size: 9px; padding: 5px 7px; }
+  .answer-card { padding: 19px 18px 17px; }
+  .answer-identity { font-size: 10px; gap: 7px; }
+  .answer-top { gap: 9px; margin-bottom: 21px; padding-bottom: 14px; }
+  .answer-text h3 { font-size: 21px; }
+  .answer-text p { font-size: 14px; line-height: 1.8; }
+  .question-bubble { flex-wrap: wrap; gap: 6px; }
+  .question-bubble p { flex-basis: 100%; }
+  .question-bubble time { margin-left: auto; }
+  .composer-caption { align-items: flex-start; flex-wrap: wrap; }
+  .login-story h1 { font-size: 42px; }
+  .recruiter-modal .modal-heading { padding: 12px 21px; }
+  .recruiter-hero { padding: 22px 23px 24px; }
+  .recruiter-hero h3 { font-size: 38px; }
+  .recruiter-outline { padding: 18px 23px; }
+  .recruiter-footer { padding: 16px 23px; }
+}
+
+@media (max-width: 380px) {
+  .topbar-assurance { background: none; padding: 0; font-size: 8px; }
+  .breadcrumb { font-size: 11px; gap: 5px; }
+  .state-badge { font-size: 9px; }
+  .recruiter-footer { align-items: stretch; flex-direction: column; }
+  .recruiter-outline-heading > span:last-child { font-size: 9px; }
+}
+
+@media (max-height: 700px) and (min-width: 600px) {
+  .recruiter-modal .modal-heading { padding: 11px 27px; }
+  .recruiter-hero { padding: 20px 30px; }
+  .recruiter-hero h3 { font-size: 35px; margin: 13px 0; }
+  .recruiter-outline { padding-top: 16px; padding-bottom: 10px; }
+  .recruiter-outline li { padding: 8px 0; }
+  .recruiter-footer { padding-top: 13px; padding-bottom: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .composer, .recruiter-entry { transition: none; }
+}

@@ -1,10 +1,28 @@
+# Previous experiment, retained locally for recovery only.
+.archive/
+
+# Local documents and generated source content.
+data/
+output/
+tmp/
+*.pdf
+*.docx
+
+# Credentials and Python environment.
 .env
 .env.*
 !.env.example
 .venv/
-.uv-cache/
-.pytest_cache/
 __pycache__/
-*.py[cod]
+*.pyc
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# Frontend dependencies and browser test output.
 node_modules/
-.next/
+coverage/
+.vitest/
+*.tsbuildinfo
+.sites-runtime/
